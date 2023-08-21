@@ -1,12 +1,12 @@
 #!/usr/bin/python3
-"""For a given employee ID, returns information about his/her TODO list progress."""
+'''
+For a given employee ID, returns information about his/her TODO list progress.
+'''
 
 import sys
 import requests
 
 if __name__ == '__main__':
-
-
     NUMBER_OF_DONE_TASKS = 0
     TASK_TITLE = []
     
