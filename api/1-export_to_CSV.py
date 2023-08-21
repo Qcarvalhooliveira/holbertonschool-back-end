@@ -1,9 +1,10 @@
 #!/usr/bin/python3
-"""For a given employee ID, returns information about his/her TODO list progress."""
+"""For a given employee ID, returns information about
+   his/her TODO list progress."""
 
 import csv
-import sys
 import requests
+import sys
 
 if __name__ == '__main__':
     NUMBER_OF_DONE_TASKS = 0
@@ -15,8 +16,8 @@ if __name__ == '__main__':
 
     EMPLOYEE_NAME = user_info['username']
 
-    user_tasks = requests.get('https://jsonplaceholder.typicode.com/todos?userId={}'.
-                              format(USER_ID)).json()
+    user_tasks = requests.get('https://jsonplaceholder.typicode.com/todos?userId={}'
+                              .format(USER_ID)).json()
 
     with open(USER_ID + '.csv', 'w', newline='') as csv_file:
         write = csv.writer(csv_file, quoting=csv.QUOTE_ALL)
