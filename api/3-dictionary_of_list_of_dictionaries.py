@@ -5,19 +5,19 @@ import json
 import requests
 
 if __name__ == '__main__':
-    user_info = requests.get(
+    users_page = requests.get(
         "https://jsonplaceholder.typicode.com/users").json()
-    user_tasks = requests.get(
+    todo_page = requests.get(
         "https://jsonplaceholder.typicode.com/todos").json()
     userdict = {}
     usernamedict = {}
 
-    for user in user_info:
+    for user in users_page:
         uid = user.get("id")
         userdict[uid] = []
         usernamedict[uid] = user.get("username")
 
-    for task in user_tasks:
+    for task in todo_page:
         taskdict = {}
         uid = task.get("userId")
         taskdict["task"] = task.get('title')
