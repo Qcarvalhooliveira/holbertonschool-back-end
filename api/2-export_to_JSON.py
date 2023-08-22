@@ -6,17 +6,17 @@ import requests
 from sys import argv
 
 if __name__ == '__main__':
-    user_info = requests.get(
+    user_page = requests.get(
         "https://jsonplaceholder.typicode.com/users/{}".
         format(argv[1])).json()
-    user_tasks = requests.get(
+    todo_page = requests.get(
         "https://jsonplaceholder.typicode.com/todos?userId={}".
         format(argv[1])).json()
-    username = user_info.get("username")
+    username = user_page.get("username")
     user_id = argv[1]
 
     tasks = []
-    for task in user_tasks:
+    for task in todo_page:
         task_dict = {}
         task_dict["task"] = task.get('title')
         task_dict["completed"] = task.get('completed')
