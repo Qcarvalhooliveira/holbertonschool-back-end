@@ -19,4 +19,3 @@ if __name__ == '__main__':
             csv_writer.writerow([int(argv[1]), user_page.get('username'),
                                  task.get('completed'),
                                  task.get('title')])
-
